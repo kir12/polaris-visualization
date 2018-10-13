@@ -15,25 +15,24 @@ h2{color:yellow;
    text-align:center;
 
  }
- #navcontainer
+ .container
 {
 
-margin: 0% auto;
+margin: auto;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 175%;
+list-style:none;
+width:80%;
 }
-ul#navlist
-{
-margin-top: 25px;
-margin-left:20px;
-padding-left:900px;
-white-space: nowrap;
-}
-
 #navlist li
 {
-display: inline;
+display: inline-block;
 list-style-type: none;
+margin-left: .5px;
+margin-top:20px;
+margin-right:150px;
+float: right;
+font-size:120%;
 }
 
 #navlist a { padding: 5px 10px; }
@@ -43,16 +42,14 @@ list-style-type: none;
 color: blue;
 background-color: white;
 text-decoration: none;
-border-radius: 10px;
-}
-.logo
-{
-	float: left;
-	width: 50%;
-	height:50%;
 }
 header
 {
+	background:white;
+}
+.logo
+{
+	float: right;
 	
 }
 #navlist a:hover
@@ -60,6 +57,82 @@ header
 color: white;
 background-color: black;
 text-decoration: none;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+* {box-sizing:border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+  background:white;
+}
+.mySlides {
+    display: none;
+	position: right;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: blue;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color:white;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 #footer {
     background-color:blue;
