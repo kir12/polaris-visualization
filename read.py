@@ -27,6 +27,11 @@ def file_read_pandas(url):
 	#example of calling series 1st level attribute
 	print(data_df.creationDate)
 
+	for test in data_df.geometry:
+		print(test.keys())
+
+	print("\n===========\n")
+
 	#ietereates through the Property series. Each 'test' is a Python dictionary
 	for test in data_df.properties:
 		print(test.keys())
