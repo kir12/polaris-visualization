@@ -15,48 +15,71 @@ h2{color:yellow;
    text-align:center;
 
  }
- .container
-{
-
-margin: auto;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 175%;
-list-style:none;
-width:80%;
-}
-#navlist li
-{
-display: inline-block;
-list-style-type: none;
-margin-left: .5px;
-margin-top:20px;
-margin-right:150px;
-float: right;
-font-size:120%;
+.container {
+	width: 80%;
+	margin: 0 auto;
 }
 
-#navlist a { padding: 5px 10px; }
+header {
+  background:rgb(255, 203, 5);
+}
 
-#navlist a:link, #navlist a:visited
-{
-color: blue;
-background-color: white;
-text-decoration: none;
+header::after {
+  content: '';
+  display: table;
+  clear: both;
 }
-header
-{
-	background:white;
+
+.logo {
+  float: left;
+  padding: 2px 0;
 }
-.logo
-{
-	float: right;
-	
+
+nav {
+  float: right;
 }
-#navlist a:hover
-{
-color: white;
-background-color: black;
-text-decoration: none;
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color:rgb(0, 39, 90);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: rgb(0, 0, 220);
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: rgb(0, 39, 156);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
 }
 .column {
   float: left;
@@ -78,7 +101,7 @@ img {vertical-align: middle;}
   max-width: 2000px;
   position: relative;
   margin: auto;
-  background:white;
+  background:rgb(255, 255, 255);
 }
 .mySlides {
     display: none;
@@ -136,12 +159,14 @@ img {vertical-align: middle;}
 }
 #footer {
     background-color:blue;
+	background-position:center;
     color:white;
     clear:both;
     text-align:center;
    padding:5px;	
-   font-size:200%;
-  width:100%;   
+   font-size:100%;
+   margin-left:700px;
+   margin-right:700px;
 }
 #footer2 {
     background-color:blue;
@@ -149,6 +174,6 @@ img {vertical-align: middle;}
     clear:both;
     text-align:center;
    padding:5px;	
-   font-size:200%;
-  width:100%;   
+   font-size:100%;
+  width:50%;   
 }  
