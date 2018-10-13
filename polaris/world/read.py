@@ -1,8 +1,13 @@
+'''
+pre-django implementation of Panda
+MERGED INTO DJANGO
+'''
 import json
 import ijson
 import pandas as pd
 import matplotlib.pyplot as plt
 from pprint import pprint
+from random import randint
 
 def file_read(url):
 	with open(url,'r') as f:
@@ -43,7 +48,7 @@ def pandas_points(url):
 
 	#gets specific datapoint (e.g. first one) and returns as a list
 	#todo: replace 0 with random number once google maps api is soldified
-	datapoint = data_df.iloc[2]
+	datapoint = data_df.iloc[randint(0,len(data_df))]
 	return datapoint.geometry['coordinates']
 
 if __name__ == "__main__":
