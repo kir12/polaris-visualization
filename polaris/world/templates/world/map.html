@@ -14,7 +14,7 @@
 			<style>
 			
 				#map{
-					height:100%;	
+					height:600px;	
 					width:auto;
 				}
 			
@@ -45,9 +45,19 @@
 			function initMap() {
 				console.log('a')
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: {lat: -34.397, lng: 150.644},
-					zoom: 8
+					center: {lat: {{avg_lat}}, lng: {{avg_long}}},
+					zoom: 16
 				});
+				var markers = [];
+				{% for coord in coords %}
+					markers.push(new google.maps.Marker({position:{lat: {{coord.1}}, lng: {{coord.0}}}, map: map}));
+				{% endfor %}
+				
+				var bounds = new google.maps.LatLngBounds();
+				for(var i = 0; i < markers.length; i++){
+					bounds.extend(markers[i].getPosition());	
+				}
+				map.fitBounds(bounds);
 			}	
 		
 		</script>

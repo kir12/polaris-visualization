@@ -1,0 +1,3 @@
+We created this project at MHacks 11 for Polaris' "Work Hard, Play Hard" Challenge, in which we were given a dataset of ~50,000 rides from Polaris vehicles and were tasked with creating an app or data visualization for it.
+We chose to create a web app that would select a random ride from the dataset each time a user accessed the site, plot its path on a Google Maps map, and present the key ride data.
+The backend was built with Django and the Google Maps API, the frontend was built using HTML and CSS, and we parsed/analyzed the dataset using the pandas library.

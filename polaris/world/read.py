@@ -43,7 +43,7 @@ def pandas_points(url):
 
 	#gets specific datapoint (e.g. first one) and returns as a list
 	#todo: replace 0 with random number once google maps api is soldified
-	datapoint = data_df.iloc[0]
+	datapoint = data_df.iloc[2]
 	return datapoint.geometry['coordinates']
 
 if __name__ == "__main__":
