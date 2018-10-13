@@ -1,25 +1,62 @@
-h1{color:white;
+h1{color:rgb(0, 39, 156);
 	text-align:Center;	
 	font-size:50px;
 	font-family:Algerian;
-	background-color:rgba(0,0,200,1);
-	margin-bottom:10px;
 	margin-top:20px;
+	margin-bottom:0px;
 }
-h3{color:yellow;
-   margin-bottom:0px;
-
+div.a
+{
+	text-align: center;
+}
+p
+{
+	color:rgb(0, 39, 156);
+	font-family:arial;
  }
-h2{color:yellow;
+ h2{color:rgb(0, 39, 156);
    margin-bottom:0px;
-   text-align:center;
-
+	text-align:center;
+ }
+h3{color:rgb(0, 39, 156);
+   margin-bottom:0px;
+	text-align:center;
+ }
+ h4{color:rgb(0, 39, 156);
+   margin-bottom:0px;
+	text-align:center;
  }
 .container {
 	width: 80%;
 	margin: 0 auto;
 }
-
+.image1
+{
+    margin-left: 100px;
+}
+.image2
+{
+    margin-left: 100px;
+}
+.image3
+{
+    margin-left: 100px;
+}
+.text {
+  color: green;
+  width: 100%;
+  text-align: .image1 margin-left;
+}
+.text2 {
+  color: green;
+  width: 100%;
+  text-align: .image2 margin-left;
+}
+.text3 {
+  color: green;
+  width: 100%;
+  text-align: .image3 margin-left;
+}
 header {
   background:rgb(255, 203, 5);
 }
@@ -54,7 +91,7 @@ nav li {
 }
 
 nav a {
-  color:rgb(0, 39, 90);
+  color:rgb(0, 12, 90);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
@@ -176,4 +213,89 @@ img {vertical-align: middle;}
    padding:5px;	
    font-size:100%;
   width:50%;   
-}  
+}
+span{color:gold;}
+.elegant-aero {
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width: 500px;
+    background: rgb(0, 39, 156);
+    padding: 20px 20px 20px 20px;
+    font: 16px Arial, Helvetica, sans-serif;
+    color: black;
+}
+.elegant-aero h1 {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 10px 10px 10px 20px;
+    display: block;
+    background: rgb(0, 39, 120);
+    border-bottom: 1px solid rgb(255, 203, 5);
+    margin: -20px -20px 15px;
+	color:gold;
+}
+.elegant-aero h1>span {
+    display: block;
+    font-size: 11px;
+}
+
+.elegant-aero label>span {
+    float: left;
+    margin-top: 10px;
+    color: rgb(255, 203, 5);;
+}
+.elegant-aero label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.elegant-aero label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.elegant-aero input[type="text"], .elegant-aero input[type="email"], .elegant-aero textarea, .elegant-aero select {
+    color: rgb(0, 39, 120);
+    width: 70%;
+    padding: 0px 0px 0px 5px;
+    border: 1px solid rgb(255, 203, 5);
+    background: rgb(255, 203, 5);
+    outline: 0;
+    -webkit-box-shadow:inset 0px 1px 6px gold;
+    box-shadow: inset 0px 1px 6px gold;
+    font: 200 12px/25px Arial, Helvetica, sans-serif;
+    height: 30px;
+    line-height:15px;
+    margin: 2px 6px 16px 0px;
+}
+.elegant-aero textarea{
+    height:100px;
+    padding: 5px 0px 0px 5px;
+    width: 70%;
+}
+.elegant-aero select {
+    background: #fbfbfb url('down-arrow.png') no-repeat right;
+    background: #fbfbfb url('down-arrow.png') no-repeat right;
+   appearance:none;
+    -webkit-appearance:none;
+   -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+}
+.elegant-aero .button{
+    padding: 10px 30px 10px 30px;
+    background: rgb(255, 203, 5);
+    border: none;
+    color: rgb(0, 39, 120);
+    box-shadow: 1px 1px 1px rgb(0, 39, 120);
+    -webkit-box-shadow: 1px 1px 1px rgb(0, 39, 120);
+    -moz-box-shadow: 1px 1px 1px rgb(0, 39, 120);
+    text-shadow: 1px 1px 1px rgb(0, 39, 120);
+
+}
+.elegant-aero .button:hover{
+    background: rgb(255, 255, 255);
+}
