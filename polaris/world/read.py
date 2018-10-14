@@ -51,6 +51,25 @@ def pandas_points(url):
 	datapoint = data_df.iloc[randint(0,len(data_df))]
 	return datapoint.geometry['coordinates']
 
+def pandas_chunks(url):
+	#will also need to re-direct to loading page
+	data_df = pd.read_json(url,lines=True,chunksize=1)
+	random_val = randint(0,49999)	
+	iet=0
+	datapointFrame = pd.DataFrame()
+	for chunk in data_df:
+		if iet == random_val:
+			datapointFrame=chunk
+			break
+		else:
+			iet+=1
+			print(iet)
+	datapoint = datapointFrame.iloc[0]
+	properties = datapoint.properties
+	coords = datapoint.geometry['coordinates']
+	print(properties)
+	print(coords)
+	
 if __name__ == "__main__":
-	file_read_pandas('/run/media/brianl/SAMSUNG USB/RideCommandForHack_example.json')
+	pandas_chunks('/run/media/brianl/SAMSUNG USB/RideCommandForHack.json')
 

@@ -17,6 +17,7 @@ def index(request):
 	#opens the JSON files, extracts a random point, and extacts the lat/long coords, time/distance, and start-end timestamp
 	print('page loading started')
 	datapoint = data_df.iloc[randint(0,len(data_df))]
+	print(type(datapoint))
 	print('specific data point isolated')
 
 	properties = datapoint.properties
