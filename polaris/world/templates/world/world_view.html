@@ -27,21 +27,7 @@
 				<div class = "jumbotron text-center">
 					<h1>Hello World</h1>
 				</div>	
-				<div class = "row">
-					<div class = "col-md-8">
-						<div id = "map"></div>
-					</div>
-					<div class = "col-md-4">
-						<h1>Some Stats</h1>
-						<p>Total Duration (Seconds): {{side_values.totalDurationInSeconds}}</p>
-						<p>Total Distance (Meters): {{side_values.totalDistanceInMeters}}</p>
-						<p>Start Time: {{side_values.startTimestamp|date:"P; l, F j, Y"}}</p>
-						<p>End Time: {{side_values.endTimestamp|date:"P; l, F j, Y"}}</p>
-						<p style = "display:none" id = "location">Location: </p>
-						<div class = "text-center"><button onclick = "location.reload()" type="button" class="btn btn-primary">Generate New Path</button></div>
-					</div>
-				</div>
-				
+				<div id = "map"></div>
 			</div>
 
 		</body>
@@ -49,35 +35,21 @@
 		<script>
 		
 			var map;
-			
-			var request = new XMLHttpRequest();
-			
-			request.open('GET','https://maps.googleapis.com/maps/api/geocode/json?latlng={{avg_lat}},{{avg_long}}&key=AIzaSyDAiyVPTvomeKqHRKUWJFNPFZEnb808a_k')
-
-			request.onload = function(){
-				var data = JSON.parse(this.response);
-				console.log(data['results']['3'])
-				if(typeof data['results'][3] !== 'undefined'){
-					console.log('b');
-					document.getElementById('location').innerHTML = 'Location: ' + data['results'][3]['formatted_address'];	
-					document.getElementById('location').style.display = 'block';	
-				}
-				//data.forEach(datapoint => {
-					//console.log(datapoint);	
-				//});	
-			};
-
-			request.send();
+			console.log('map var created')
 
 			function initMap() {
+				console.log('method enered')
 				map = new google.maps.Map(document.getElementById('map'), {
-					center: {lat: {{avg_lat}}, lng: {{avg_long}}},
-					zoom: 16
+					center: {lat: 90, lng: 90},
+					zoom: 1
 				});
+				console.log('Map Created')
+
 				var markers = [];
-				{% for coord in coords %}
+				{% for coord in average_points %}
 					markers.push(new google.maps.Marker({position:{lat: {{coord.1}}, lng: {{coord.0}}}, map: map}));
 				{% endfor %}
+				console.log('markers laid')
 				
 				var bounds = new google.maps.LatLngBounds();
 				for(var i = 0; i < markers.length; i++){
