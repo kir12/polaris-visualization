@@ -5,17 +5,18 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{% block title %}Polaris Data{% endblock %}</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+		{% block style %}{% endblock %}
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="http://brand.polaris.com/wp-content/uploads/2015/11/Polaris_corpId_logos_flat_696x150.png" style="width:150px;height:40px">
+				<a class="navbar-brand" href="#"><img src="http://brand.polaris.com/wp-content/uploads/2015/11/Polaris_corpId_logos_flat_696x150.png" style="width:150px;height:40px"> RideVis
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 					<span class="navbar-toggler-icon"></span>
@@ -23,13 +24,16 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home</a>
+							<a class="nav-link" href="/">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="About.html">About</a>
+							<a class="nav-link" href="https://github.com/asi14/polaris-visualization">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Google Data</a>
+							<a class="nav-link" href="{% url 'world:index' %}">Google Maps Random Path Viewer</a>
+						</li>
+						<li class = "nav-item">
+							<a class="nav-link" href = "{% url 'world:world_view'%}">Google Maps World Viewer</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="Contact.html">Contact Us</a>
@@ -212,5 +216,5 @@
 				</div>
 			</footer>
 		</body>
-		{% block javscript %}{% endblock %}
+		{% block javascript %}{% endblock %}
 	</html>
