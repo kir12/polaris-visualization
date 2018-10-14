@@ -71,14 +71,9 @@ def pandas_chunks(url):
 		else:
 			iet+=1
 			print(iet)
-	#extracts Series type out of DataFrame
+	#extracts Series type out of DataFrame and returns
 	datapoint = datapointFrame.iloc[0]
-
-	#additional operations
-	properties = datapoint.properties
-	coords = datapoint.geometry['coordinates']
-	print(properties)
-	print(coords)
+	return datapoint
 	
 if __name__ == "__main__":
 	pandas_chunks('/run/media/brianl/SAMSUNG USB/RideCommandForHack.json')

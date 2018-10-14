@@ -1,18 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from world.read import file_read_pandas, pandas_points
+from world.read import pandas_chunks
 from random import randint
 import pandas as pd
 from dateparser import parse
 import datetime
 
-#this breaks with the big file
-#moved above as a global var
-data_df = pd.read_json('/run/media/brianl/SAMSUNG USB/RideCommandForHack_example.json',lines=True)
-print('json file loaded')
-
-
-def index(request):
+#accesses datapoint directly without chunksize
+#faster, but won't work with larger dataset
+def old_read(request):
+	#moved above as a global var
+	data_df = pd.read_json('/run/media/brianl/SAMSUNG USB/RideCommandForHack_example.json',lines=True)
+	print('json file loaded')
 
 	#opens the JSON files, extracts a random point, and extacts the lat/long coords, time/distance, and start-end timestamp
 	print('page loading started')
@@ -20,6 +19,9 @@ def index(request):
 	print(type(datapoint))
 	print('specific data point isolated')
 
+
+def index(request):
+	datapoint = pandas_chunks('/run/media/brianl/SAMSUNG USB/RideCommandForHack.json')
 	properties = datapoint.properties
 	print('properties apect extracted')
 
@@ -40,6 +42,7 @@ def index(request):
 # Create your views here.
 
 def world_view(request):
+	data_df = pd.read_json('/run/media/brianl/SAMSUNG USB/RideCommandForHack_example.json',lines=True) #copied from old_read
 	average_points = []
 	print(data_df.columns)
 	for datapoint in data_df.geometry:
