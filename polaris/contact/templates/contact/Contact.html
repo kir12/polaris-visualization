@@ -1,6 +1,8 @@
 {% extends 'polaris/index.html' %}
+{% load bootstrap4 %}
 		{% block title %}Contact Us{% endblock %}
 		{% block body %}
+			<!--
 			<div>
 				<p id="shadow2"><form action="" method="post" class="elegant-aero">
 					<h1>Contact Form 
@@ -28,7 +30,18 @@
 				</div>
 			</p>
 		</div>
+		-->
+		<div class = "container">
+		<div class = "jumbotron text-center"><h1>Contact Us</h1></div>
+		<form method = "POST" class = "form text-center" style = "margin:1rem">{% csrf_token %}
+			{% bootstrap_form form %}
+			{% buttons %}
+				<button type="submit" class="btn btn-primary">Save</button>
+			{% endbuttons %}
+		</form>
+
 		<center>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.429147830323!2d-83.7446531841953!3d42.26936177919309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3636c5c47d%3A0x4488bf86906b1fc8!2sIntramural+Sports+Building!5e0!3m2!1sen!2sus!4v1539457887153" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</center>
+		</div>
 		{% endblock %}	
