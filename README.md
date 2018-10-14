@@ -15,7 +15,10 @@ Our webpage represents up to **50,000 data points** that appear on the paths sev
 
 ## Process
 
+### Dependencies
 
+Follow `requirements.txt`. The software package `RabbitMQ` is also required. Follow your own operating system's instructions for installing RabbitMQ.
+Note that due to restrictions with Celery, this repository supports only Linux.
 
 ## Challenges
 
