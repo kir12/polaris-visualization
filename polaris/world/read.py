@@ -53,10 +53,17 @@ def pandas_points(url):
 
 def pandas_chunks(url):
 	#will also need to re-direct to loading page
+
+	#opens json file in pandas as JsonReader type (i.e. an ieterator)
 	data_df = pd.read_json(url,lines=True,chunksize=1)
+	
+	#creates value to summon, index to increment by, and intiailizes placeholder for datapointFrame
 	random_val = randint(0,49999)	
 	iet=0
 	datapointFrame = pd.DataFrame()
+
+	#ieterates through JsonReader and keeps ieterating iet until desired value is hit. 
+	#exits out of loop upon hitting said value
 	for chunk in data_df:
 		if iet == random_val:
 			datapointFrame=chunk
@@ -64,7 +71,10 @@ def pandas_chunks(url):
 		else:
 			iet+=1
 			print(iet)
+	#extracts Series type out of DataFrame
 	datapoint = datapointFrame.iloc[0]
+
+	#additional operations
 	properties = datapoint.properties
 	coords = datapoint.geometry['coordinates']
 	print(properties)
