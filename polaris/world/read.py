@@ -59,8 +59,8 @@ def pandas_chunks(url):
 	
 	#creates value to summon, index to increment by, and intiailizes placeholder for datapointFrame
 	random_val = randint(0,49999)	
-	iet=0
 	datapointFrame = pd.DataFrame()
+	iet=0
 
 	#ieterates through JsonReader and keeps ieterating iet until desired value is hit. 
 	#exits out of loop upon hitting said value
