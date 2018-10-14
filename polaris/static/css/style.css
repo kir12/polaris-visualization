@@ -6,6 +6,10 @@ html,body
 	font-family:arial;
 	color: rgb(0, 39, 156);
 }
+ul{
+	list-style-type: none;
+	margin-right:40px;
+}
 navbar
 {padding:.8rem;
 	
@@ -28,6 +32,11 @@ navbar
 	transform:translateY(-50%);
 	color:white;
 }
+.display-4
+{
+	font-family:Georgia;
+	font-style:bold;
+	}
 .carousel-caption2
 {
 	top:90%;
@@ -142,7 +151,7 @@ background: rgb(255, 255, 255);
 }
 /*---Media Queries --*/
 @media (max-width: 992px) {
-	
+	 
 }
 @media (max-width: 768px) {
 	
@@ -176,7 +185,7 @@ figure {
 	height: 100%;
 }
 #fixed {
-	background-image: url('img/mac.png');
+	backgroun b vd-image: url("https://i.ytimg.com/vi/JFm_xayGPZ0/maxresdefault.jpg");
 	position: fixed;
 	display: block;
 	top: 0;
@@ -193,10 +202,7 @@ figure {
 [class*="col-"] {
     padding: 1rem;
 }
-ul{
-	list-style-type: none;
-	margin-right:40px;
-}
+
 /*
 	Extra small (xs) devices (portrait phones, less than 576px)
 	No media query since this is the default in Bootstrap
