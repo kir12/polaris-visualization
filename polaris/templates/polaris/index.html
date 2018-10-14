@@ -30,13 +30,13 @@
 							<a class="nav-link" href="https://github.com/asi14/polaris-visualization">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'world:index' %}">Google Maps Random Path Viewer</a>
+							<a onclick = "alert('Warning: This will take a long time!')"class="nav-link" href="{% url 'world:index' %}">Google Maps Random Path Viewer</a>
 						</li>
 						<li class = "nav-item">
 							<a class="nav-link" href = "{% url 'world:world_view'%}">Google Maps World Viewer</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="Contact.html">Contact Us</a>
+							<a class="nav-link" href="{% url 'contact:index' %}">Contact Us</a>
 						</li>
 					</ul>
 				</div>

@@ -58,8 +58,7 @@ def pandas_chunks(url):
 	data_df = pd.read_json(url,lines=True,chunksize=1)
 	
 	#creates value to summon, index to increment by, and intiailizes placeholder for datapointFrame
-	#random_val = randint(0,49999)	
-	random_val=25
+	random_val = randint(0,49999)	
 	datapointFrame = pd.DataFrame()
 	iet=0
 
