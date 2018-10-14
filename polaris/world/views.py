@@ -21,7 +21,9 @@ def old_read(request):
 
 
 def index(request):
-	datapoint = pandas_chunks('/run/media/brianl/SAMSUNG USB/RideCommandForHack.json')
+	print('initial recieved')
+	datapoint = pandas_chunks.delay(url='/run/media/brianl/SAMSUNG USB/RideCommandForHack.json',seconds=10)
+	print('a')
 	properties = datapoint.properties
 	print('properties apect extracted')
 
@@ -38,7 +40,7 @@ def index(request):
 		sum_lat+=coord[1]
 	print('average coords calculated')
 
-	return render(request,'world/map.html',{'coords':coords,'avg_long':sum_long/len(coords),'avg_lat':sum_lat/len(coords),'side_values':side_values})
+	return render(request,'world/map.html',{'coords':coords,'avg_long':sum_long/len(coords),'avg_lat':sum_lat/len(coords),'side_values':side_values,'task_id':datapoint.task_id})
 # Create your views here.
 
 def world_view(request):
