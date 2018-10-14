@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="Polaris.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="C:\Users\MeaadFRC\Pictures\Polaris-Logo.jpg" />
+		<title>Polaris Data</title>
+		
+	</head>
+	<header>
+		<div class="container">
+			<img src="http://brand.polaris.com/wp-content/uploads/2015/11/Polaris_corpId_logos_flat_696x150.png" alt="logo" class"logo" vspace="13"  style="width:150px;height:40px">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="MhacksAbout.html">About</a></li>
+					<li><a href="#">Google Data</a></li>
+					<li><a href="MhacksContact.html">Contact</a></li>
+				</ul>
+				
+			</nav>
+		</div>
+	</header>
+	<body>
+		<div class="slideshow-container">
+			
+			<div class="mySlides fade">
+				<div class="row">
+					<div class="column">
+						<img src="http://cdn-gen.polaris.com/sno/2019/img/model-thumbs/indy-evo-es.png" alt="Snow" style="width:100%">
+					</div>
+					<div class="column">
+						<img src="http://cdn-gen.polaris.com/sno/2018/img/media-viewer/modal/550-widetrak-lx/550-widetrak-lx-profile.jpg" alt="Snow2" style="width:100%">
+					</div>
+				</div>
+			</div>
+			
+			<div class="mySlides fade">
+				
+				<img src="https://d1jgrpnx5qsq8g.cloudfront.net/images/content/1280x720/216071i37a77734d21ed0a30a98ca476c9b43eb.jpg" alt="Dumb" style="width:100%; height:650px">
+			</div>
+			<div class="mySlides fade">
+				<div class="row">
+					<div class="column">
+						<img src="https://i0.wp.com/www.asphaltandrubber.com/wp-content/uploads/2017/09/2018-Polaris-Slingshot-SL-slingshade-05.jpg?fit=3600%2C2395&ssl=1" style="width:100%; height:520px">
+					</div>
+					<div class="column">
+						<img src="https://i.ytimg.com/vi/LGtB3B-Gikc/maxresdefault.jpg" alt="Dumb2" style="width:100%">
+					</div>
+				</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		
+	<!-- The dots/circles -->
+	<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span> 
+	<span class="dot" onclick="currentSlide(2)"></span> 
+	<span class="dot" onclick="currentSlide(3)"></span> 
+	</div>
+	<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+	
+	// Next/previous controls
+	function plusSlides(n) {
+	showSlides(slideIndex += n);
+	}
+	
+	// Thumbnail image controls
+	function currentSlide(n) {
+	showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) {slideIndex = 1} 
+	if (n < 1) {slideIndex = slides.length}
+	for (i = 0; i < slides.length; i++) {
+	slides[i].style.display = "none"; 
+	}
+	for (i = 0; i < dots.length; i++) {
+	dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex-1].style.display = "block"; 
+	dots[slideIndex-1].className += " active";
+	}
+	</script>
+	<style>
+	{background-color:rgb(255, 255, 255);
+	</style>
+	
+	<br><br><br>
+	<p1>We are a team of four who wanted to test</p1>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="footer">
+	<br>
+	&#169; 2018 Polaris Indistries Inc. Meaad,Bryan,Aaron,Hentanshi <br><img src="http://brand.polaris.com/wp-content/uploads/2015/11/Polaris_corpId_logos_flat_696x150.png" alt="dww" class"dww" vspace="13"  style="width:150px;height:40px">
+	</div>
+	</body>
+	</html>	
