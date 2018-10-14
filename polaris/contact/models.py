@@ -7,4 +7,7 @@ class Contact(models.Model):
 	message=models.TextField()
 	timestamp = models.DateTimeField(default=now())
 
+	def __str__(self):
+		return self.name + ', ' + self.email + ', submitted on ' + self.timestamp.strftime("%Y-%m-%d %H:%M")
+
 # Create your models here.
