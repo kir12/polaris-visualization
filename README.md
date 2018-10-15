@@ -15,6 +15,17 @@ Our webpage represents up to **50,000 data points** that appear on the paths sev
 
 ## Process
 
+###Installation
+
+This project requires, at a minimum, a working version of Python 3 with a Linux terminal. You'll also require a JSON dataset from Polaris.
+
+1. `git clone` the repository into a location of your choice.
+2. `python -m venv environ` in a directory of your choice
+3. `source /path/to/environ/bin/activate` to activate virtual environment
+4. `cd` into `polaris-visualization` and run `pip install -r requirements.txt` to install required dependencies
+5. `cd` into `polaris` folder (a.k.a. Django folder) and run `python manage.py migrate` to create DB tables
+6. `python manage.py runserver` to start project. Go to `http//127.0.0.1:8000` to see website. 
+
 ### Dependencies
 
 Follow `requirements.txt`. The software package `RabbitMQ` is also required. Follow your own operating system's instructions for installing RabbitMQ.
@@ -49,7 +60,10 @@ During this project, we learnt...
 
 
 
-## Built-With
+## Materials & Contributing
+
+This project was built with a Pandas & Django backend and a Bootstrap & Google Maps API frontend.
+If you wish to contribute, please submit an issue.
 
 
 
