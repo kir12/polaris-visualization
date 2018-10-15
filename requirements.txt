@@ -1,9 +1,11 @@
 amqp==2.3.2
 billiard==3.5.0.4
 celery==4.2.1
+celery-progress==0.0.3
 cycler==0.10.0
 dateparser==0.7.0
 Django==2.1.2
+django-bootstrap4==0.0.7
 ijson==2.3
 kiwisolver==1.0.1
 kombu==4.2.1

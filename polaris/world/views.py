@@ -5,6 +5,7 @@ from random import randint
 import pandas as pd
 from dateparser import parse
 import datetime
+import time
 
 #accesses datapoint directly without chunksize
 #faster, but won't work with larger dataset
@@ -21,11 +22,20 @@ def old_read(request):
 
 
 def index(request):
+
+	start_time = time.time()
+
 	datapoint = pandas_chunks('/run/media/brianl/SAMSUNG USB/RideCommandForHack.json')
 	properties = datapoint.properties
 	print('properties apect extracted')
 
-	side_values = {'totalDurationInSeconds':int(properties['totalDurationInSeconds']),'totalDistanceInMeters':round(properties['totalDistanceInMeters'],2),'startTimestamp':parse(str(properties['startTimestamp']['$date'])),'endTimestamp':parse(str(properties['endTimestamp']['$date']))}
+	side_values = {'totalDurationInSeconds':int(properties['totalDurationInSeconds']),'totalDistanceInMeters':round(properties['totalDistanceInMeters'],2)}
+	try:
+		side_values['startTimestamp']=parse(str(properties['startTimestamp']['$date']))
+		side_values['endTimestamp']=parse(str(properties['endTimestamp']['$date']))
+	except:
+		side_values['startTimestamp']='N/A'
+		side_values['endTimestamp']='N/A'
 	print('side_values dictionary created')
 
 	coords = datapoint.geometry['coordinates']
@@ -38,7 +48,9 @@ def index(request):
 		sum_lat+=coord[1]
 	print('average coords calculated')
 
-	return render(request,'world/map.html',{'coords':coords,'avg_long':sum_long/len(coords),'avg_lat':sum_lat/len(coords),'side_values':side_values})
+	end_time = time.time()
+
+	return render(request,'world/map.html',{'coords':coords,'avg_long':sum_long/len(coords),'avg_lat':sum_lat/len(coords),'side_values':side_values,'time_calc':int(end_time-start_time)})
 # Create your views here.
 
 def world_view(request):
